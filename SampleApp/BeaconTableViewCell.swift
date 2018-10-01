@@ -46,6 +46,13 @@ class BeaconTableViewCell: UITableViewCell {
         // Initialization code
     }
 
+    @IBAction func linkButtonPressed(_ sender: Any) {
+        
+        if let link = URL(string: eddystoneURL.text!) {
+            UIApplication.shared.open(link)
+        }
+        
+    }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
@@ -92,4 +99,5 @@ class BeaconTableViewCell: UITableViewCell {
         frame.size.width = CGFloat(40 * batteryLevel)
         self.batteryView.frame = frame
     }
+    
 }

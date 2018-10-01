@@ -32,6 +32,7 @@
 		5426861B203EB201004BF234 /* RSSIFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5426861A203EB201004BF234 /* RSSIFilter.swift */; };
 		5426861E203EB278004BF234 /* ARMAFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5426861D203EB278004BF234 /* ARMAFilter.swift */; };
 		542BC57920442B6A004E56E1 /* RunningAverageFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542BC57820442B6A004E56E1 /* RunningAverageFilter.swift */; };
+		BA12D20D2160FDD700F15CBF /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA12D20C2160FDD700F15CBF /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,7 @@
 		5426861A203EB201004BF234 /* RSSIFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSIFilter.swift; sourceTree = "<group>"; };
 		5426861D203EB278004BF234 /* ARMAFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARMAFilter.swift; sourceTree = "<group>"; };
 		542BC57820442B6A004E56E1 /* RunningAverageFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningAverageFilter.swift; sourceTree = "<group>"; };
+		BA12D20C2160FDD700F15CBF /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 				2837EA4D1FFE0696007F3D81 /* Assets.xcassets */,
 				2837EA4F1FFE0696007F3D81 /* LaunchScreen.storyboard */,
 				2837EA521FFE0696007F3D81 /* Info.plist */,
+				BA12D20C2160FDD700F15CBF /* DetailViewController.swift */,
 			);
 			path = SampleApp;
 			sourceTree = "<group>";
@@ -303,7 +306,7 @@
 					};
 					2837EA431FFE0696007F3D81 = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -396,6 +399,7 @@
 				2837EA491FFE0696007F3D81 /* ViewController.swift in Sources */,
 				2837EA5C1FFE0716007F3D81 /* BeaconTableViewCell.swift in Sources */,
 				2837EA471FFE0696007F3D81 /* AppDelegate.swift in Sources */,
+				BA12D20D2160FDD700F15CBF /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -635,12 +639,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = XV629E7AB4;
 				INFOPLIST_FILE = SampleApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobstac.SampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = AppSandro;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -651,12 +657,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = XV629E7AB4;
 				INFOPLIST_FILE = SampleApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobstac.SampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = AppSandro;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

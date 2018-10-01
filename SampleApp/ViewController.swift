@@ -19,6 +19,16 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var EddyStoneUrlLabel: UILabel!
+    
+    @IBAction func linkButtonTouchUpInside(_ sender: Any) {
+    
+        if let link = URL(string: EddyStoneUrlLabel.text!) {
+            UIApplication.shared.open(link)
+        }
+    
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
