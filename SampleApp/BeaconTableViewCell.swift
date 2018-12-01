@@ -27,19 +27,9 @@ class BeaconTableViewCell: UITableViewCell {
     
     static let cellIdentifier = "beaconTabelViewCellIdentifier"
 
-    @IBOutlet weak var rssi: UILabel!
-    @IBOutlet weak var beaconName: UILabel!
-    @IBOutlet weak var batteryView: UIView!
-    
-    @IBOutlet weak var beaconMac: UILabel!
-    
     @IBOutlet weak var beaconNamespace: UILabel!
     @IBOutlet weak var beaconInstance: UILabel!
     @IBOutlet weak var eddystoneURL: UILabel!
-    
-    @IBOutlet weak var temperature: UILabel!
-    @IBOutlet weak var txPower: UILabel!
-    @IBOutlet weak var advInt: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -60,33 +50,38 @@ class BeaconTableViewCell: UITableViewCell {
     }
     
     internal func configureCell(for beacon: Beacon) {
-        self.rssi.text = "\(beacon.filteredRSSI) dBM"
-        self.beaconName.text = beacon.name ?? ""
+        //self.rssi.text = "\(beacon.filteredRSSI) dBM"
+        //self.beaconName.text = beacon.name ?? ""
         
         var batteryAmount: Float = 0
         if let batteryPercentage = beacon.telemetry?.batteryPercentage {
             batteryAmount = Float((batteryPercentage > 100) ? 100 : batteryPercentage) / 100.0
         }
         setBatteryLevel(batteryLevel: batteryAmount)
-        self.batteryView.backgroundColor = batteryColor(forGreenAmount: batteryAmount)
+        //self.batteryView.backgroundColor = batteryColor(forGreenAmount: batteryAmount)
         
-        self.beaconMac.text = beacon.beaconID.instance.hexString.inserting(separator: ":", every: 2)
+        //self.beaconMac.text = beacon.beaconID.instance.hexString.inserting(separator: ":", every: 2)
         
-        self.beaconNamespace.text = "Namespace: \(beacon.beaconID.namespace.hexString)"
-        self.beaconInstance.text = "Instance: \(beacon.beaconID.instance.hexString)"
+//        self.beaconNamespace.text = "Namespace: \(beacon.beaconID.namespace.hexString)"
+//        self.beaconInstance.text = "Instance: \(beacon.beaconID.instance.hexString)"
+        
+        if beacon.beaconID.namespace.hexString == "6BA0D642B706D165FD3D" {
+            self.beaconNamespace.text = "Namespace: \(beacon.beaconID.namespace.hexString)"
+            self.beaconInstance.text = "Instance: \(beacon.beaconID.instance.hexString)"
+        }
         self.eddystoneURL.text = beacon.eddystoneURL?.absoluteString
         
-        self.temperature.text = "NA"
-        if let temp = beacon.telemetry?.temperature {
-            self.temperature.text = "\(temp) °C"
-        }
+        //self.temperature.text = "NA"
+        //if let temp = beacon.telemetry?.temperature {
+        //    self.temperature.text = "\(temp) °C"
+        //}
         
-        self.txPower.text = "Tx: \(beacon.txPower)"
+        //self.txPower.text = "Tx: \(beacon.txPower)"
         
-        self.advInt.text = "TI: NA"
-        if let advInt = beacon.telemetry?.advInt {
-            self.advInt.text = "TI: \(advInt)ms"
-        }
+        //self.advInt.text = "TI: NA"
+        //if let advInt = beacon.telemetry?.advInt {
+        //    self.advInt.text = "TI: \(advInt)ms"
+        //}
     }
 
     internal func batteryColor(forGreenAmount greenAmount: Float) -> UIColor {
@@ -94,10 +89,10 @@ class BeaconTableViewCell: UITableViewCell {
     }
     
     internal func setBatteryLevel(batteryLevel: Float) {
-        var frame = self.batteryView.frame
+        //var frame = self.batteryView.frame
         
-        frame.size.width = CGFloat(40 * batteryLevel)
-        self.batteryView.frame = frame
+        //frame.size.width = CGFloat(40 * batteryLevel)
+        //self.batteryView.frame = frame
     }
     
 }
